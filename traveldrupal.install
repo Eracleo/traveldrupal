@@ -256,10 +256,10 @@ function traveldrupal_content_type{
       'locked' => 0,
     ),
     array(
-      'type' => 'article',
-      'name' => st('Article'),
+      'type' => 'tour',
+      'name' => st('Tour'),
       'base' => 'node_content',
-      'description' => st('Use <em>articles</em> for time-sensitive content like news, press releases or blog posts.'),
+      'description' => st('Use <em>tour</em> for time-sensitive content tour.'),
       'custom' => 1,
       'modified' => 1,
       'locked' => 0,
@@ -394,8 +394,8 @@ function traveldrupal_content_type{
     'field_name' => 'field_image',
     'entity_type' => 'node',
     'label' => 'Image',
-    'bundle' => 'article',
-    'description' => st('Upload an image to go with this article.'),
+    'bundle' => 'tour',
+    'description' => st('Upload an image to go with this tour.'),
     'required' => FALSE,
 
     'settings' => array(
