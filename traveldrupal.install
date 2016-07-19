@@ -16,7 +16,7 @@ function traveldrupal_install() {
   $filtered_html_format = array(
     'format' => 'filtered_html',
     'name' => 'Filtered HTML',
-    'weight' => 0,
+    'weight' => 1,
     'filters' => array(
       // URL filter.
       'filter_url' => array(
@@ -46,7 +46,7 @@ function traveldrupal_install() {
   $full_html_format = array(
     'format' => 'full_html',
     'name' => 'Full HTML',
-    'weight' => 1,
+    'weight' => 0,
     'filters' => array(
       // URL filter.
       'filter_url' => array(
@@ -220,7 +220,19 @@ function traveldrupal_install() {
   db_insert('users_roles')
     ->fields(array('uid' => 1, 'rid' => $admin_role->rid))
     ->execute();
-
+  // MENu
+  traveldrupal_menu();
+  // Enable the admin theme.
+  db_update('system')
+    ->fields(array('status' => 1))
+    ->condition('type', 'theme')
+    ->condition('name', 'seven')
+    ->execute();
+  variable_set('admin_theme', 'seven');
+  variable_set('node_admin_theme', '1');
+}
+function traveldrupal_menu()
+{
   // Create a Home link in the main menu.
   $item = array(
     'link_title' => st('Home'),
@@ -231,17 +243,8 @@ function traveldrupal_install() {
 
   // Update the menu router information.
   menu_rebuild();
-
-  // Enable the admin theme.
-  db_update('system')
-    ->fields(array('status' => 1))
-    ->condition('type', 'theme')
-    ->condition('name', 'seven')
-    ->execute();
-  variable_set('admin_theme', 'seven');
-  variable_set('node_admin_theme', '1');
 }
-function traveldrupal_content_type{
+function traveldrupal_content_type(){
     // Insert default pre-defined node types into the database. For a complete
   // list of available node type attributes, refer to the node type API
   // documentation at: http://api.drupal.org/api/HEAD/function/hook_node_info.
@@ -283,7 +286,7 @@ function traveldrupal_content_type{
     ),
     array(
       'type' => 'node',
-      'bundle' => 'article',
+      'bundle' => 'tour',
       'mapping' => array(
         'field_image' => array(
           'predicates' => array('og:image', 'rdfs:seeAlso'),
@@ -349,7 +352,7 @@ function traveldrupal_content_type{
     'field_name' => 'field_' . $vocabulary->machine_name,
     'entity_type' => 'node',
     'label' => 'Tags',
-    'bundle' => 'article',
+    'bundle' => 'tour',
     'description' => $help,
     'widget' => array(
       'type' => 'taxonomy_autocomplete',

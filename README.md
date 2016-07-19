@@ -10,7 +10,7 @@ Drupal for travel agencies
 # Feature
 ## Basic Config
 ## Content Types
-- Basic Page
+- *Basic Page* Basic page
 - Tour
 ## Views
 ## Taxonomy
