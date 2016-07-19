@@ -1,4 +1,4 @@
-name = Drupal for travel agencies
+name = Travel Agency
 description = Install with commonly used features pre-configured for travel agencies.
 version = VERSION
 core = 7.x
