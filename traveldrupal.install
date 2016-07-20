@@ -245,9 +245,11 @@ function traveldrupal_menu()
   menu_rebuild();
 }
 function traveldrupal_content_type(){
-    // Insert default pre-defined node types into the database. For a complete
+  // Insert default pre-defined node types into the database. For a complete
   // list of available node type attributes, refer to the node type API
   // documentation at: http://api.drupal.org/api/HEAD/function/hook_node_info.
+
+  // Creating content types
   $types = array(
     array(
       'type' => 'page',
@@ -263,6 +265,69 @@ function traveldrupal_content_type(){
       'name' => st('Tour'),
       'base' => 'node_content',
       'description' => st('Use <em>tour</em> for time-sensitive content tour.'),
+      'custom' => 1,
+      'modified' => 1,
+      'locked' => 0,
+    ),
+    array(
+      'type' => 'blog',
+      'name' => st('Blog'),
+      'base' => 'node_content',
+      'description' => st('Use <em>blog</em> for time-sensitive content blog.'),
+      'custom' => 1,
+      'modified' => 1,
+      'locked' => 0,
+    ),
+    array(
+      'type' => 'destino',
+      'name' => st('Destino'),
+      'base' => 'node_content',
+      'description' => st('Use <em>destino</em> for time-sensitive content destino.'),
+      'custom' => 1,
+      'modified' => 1,
+      'locked' => 0,
+    ),
+    array(
+      'type' => 'experiencia',
+      'name' => st('Experiencia'),
+      'base' => 'node_content',
+      'description' => st('Use <em>experiencia</em> for time-sensitive content experiencia.'),
+      'custom' => 1,
+      'modified' => 1,
+      'locked' => 0,
+    ),
+    array(
+      'type' => 'pagina_general',
+      'name' => st('Pagina General'),
+      'base' => 'node_content',
+      'description' => st('Use <em>pagina_general</em> for time-sensitive content pagina general.'),
+      'custom' => 1,
+      'modified' => 1,
+      'locked' => 0,
+    ),
+    array(
+      'type' => 'slider_front',
+      'name' => st('Slider Front'),
+      'base' => 'node_content',
+      'description' => st('Use <em>slider_front</em> for time-sensitive content slider front.'),
+      'custom' => 1,
+      'modified' => 1,
+      'locked' => 0,
+    ),
+    array(
+      'type' => 'testimonio',
+      'name' => st('Testimonio'),
+      'base' => 'node_content',
+      'description' => st('Use <em>testimonio</em> for time-sensitive content testimonio.'),
+      'custom' => 1,
+      'modified' => 1,
+      'locked' => 0,
+    ),
+    array(
+      'type' => 'porque_nosotros',
+      'name' => st('Porque Nosotros'),
+      'base' => 'node_content',
+      'description' => st('Use <em>porque_nosotros</em> for time-sensitive content por que nosotros.'),
       'custom' => 1,
       'modified' => 1,
       'locked' => 0,
@@ -298,6 +363,46 @@ function traveldrupal_content_type(){
         ),
       ),
     ),
+    array(
+      'type' => 'node',
+      'bundle' => 'blog',
+      'mapping' => array(
+        'field_image' => array(
+          'predicates' => array('og:image', 'rdfs:seeAlso'),
+          'type' => 'rel',
+        )
+      ),
+    ),
+    array(
+      'type' => 'node',
+      'bundle' => 'pagina_general',
+      'mapping' => array(
+        'field_image' => array(
+          'predicates' => array('og:image', 'rdfs:seeAlso'),
+          'type' => 'rel',
+        )
+      ),
+    ),
+    array(
+      'type' => 'node',
+      'bundle' => 'testimonio',
+      'mapping' => array(
+        'field_image' => array(
+          'predicates' => array('og:image', 'rdfs:seeAlso'),
+          'type' => 'rel',
+        )
+      ),
+    ),
+    array(
+      'type' => 'node',
+      'bundle' => 'porque_nosotros',
+      'mapping' => array(
+        'field_image' => array(
+          'predicates' => array('og:image', 'rdfs:seeAlso'),
+          'type' => 'rel',
+        )
+      ),
+    ),
   );
   foreach ($rdf_mappings as $rdf_mapping) {
     rdf_mapping_save($rdf_mapping);
@@ -317,68 +422,20 @@ function traveldrupal_content_type(){
   variable_set('user_picture_style', 'thumbnail');
 
   // Allow only administrator to create accounts.
+  // Source: http://drupal.stackexchange.com/questions/14622/how-to-modify-drupal-configuration-programmatically
   variable_set('user_register', USER_REGISTER_ADMINISTRATORS_ONLY);
 
 
-  // Create a default vocabulary named "Tags", enabled for the 'article' content type.
-  // Create custom taxonomies
+  // Create a default vocabulary named many, enabled for the 'tour' content type.
+  // Create custom taxonomies and their fields for tour
   include 'taxonomies.php';
 
-  $description = st('Use tags to group articles on similar topics into categories.');
-  $vocabulary = (object) array(
-    'name' => st('Tags'),
-    'description' => $description,
-    'machine_name' => 'tags',
-  );
-  taxonomy_vocabulary_save($vocabulary);
-
-  $field = array(
-    'field_name' => 'field_' . $vocabulary->machine_name,
-    'type' => 'taxonomy_term_reference',
-    // Set cardinality to unlimited for tagging.
-    'cardinality' => FIELD_CARDINALITY_UNLIMITED,
-    'settings' => array(
-      'allowed_values' => array(
-        array(
-          'vocabulary' => $vocabulary->machine_name,
-          'parent' => 0,
-        ),
-      ),
-    ),
-  );
-  field_create_field($field);
-
-  $help = st('Enter a comma-separated list of words to describe your content.');
-  $instance = array(
-    'field_name' => 'field_' . $vocabulary->machine_name,
-    'entity_type' => 'node',
-    'label' => 'Tags',
-    'bundle' => 'tour',
-    'description' => $help,
-    'widget' => array(
-      'type' => 'taxonomy_autocomplete',
-      'weight' => -4,
-    ),
-    'display' => array(
-      'default' => array(
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 10,
-      ),
-      'teaser' => array(
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 10,
-      ),
-    ),
-  );
-  field_create_instance($instance);
-
-
-  // Create an image field named "Image", enabled for the 'article' content type.
+  // Create an image field named "Image", enabled for the 'tour' content type.
   // Many of the following values will be defaulted, they're included here as an illustrative examples.
   // See http://api.drupal.org/api/function/field_create_field/7
 
   $field = array(
-    'field_name' => 'field_image',
+    'field_name' => 'field_slider_tour',
     'type' => 'image',
     'cardinality' => 1,
     'locked' => FALSE,
@@ -398,7 +455,7 @@ function traveldrupal_content_type(){
   // Many of the following values will be defaulted, they're included here as an illustrative examples.
   // See http://api.drupal.org/api/function/field_create_instance/7
   $instance = array(
-    'field_name' => 'field_image',
+    'field_name' => 'field_slider_tour',
     'entity_type' => 'node',
     'label' => 'Image',
     'bundle' => 'tour',
