@@ -321,6 +321,9 @@ function traveldrupal_content_type(){
   variable_set('user_register', USER_REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL);
 
   // Create a default vocabulary named "Tags", enabled for the 'article' content type.
+  // Create custom taxonomies
+  include 'taxonomies.php';
+
   $description = st('Use tags to group articles on similar topics into categories.');
   $vocabulary = (object) array(
     'name' => st('Tags'),
