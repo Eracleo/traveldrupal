@@ -3,9 +3,9 @@
   $taxonames = ['Destinos','Duraciones','Experiencias'];
   $taxomachines = ['destinos','duraciones','experiencias'];
   $taxodescriptions = ['Los destinos de los tours.','Las duraciones de los tours.','Las experiencias de los tours.'];
-  $fields = ['field_experiencias_secundarias', 'field_experiencia_principal', 'field_duracion', 'field_destino_principal', 'field_destinos_secundarios', '']
+  $fields = ['field_experiencias_secundarias', 'field_experiencia_principal', 'field_duracion', 'field_destino_principal', 'field_destinos_secundarios'];
   $fieldslabels = ['Experiencias Secundarias', 'Experiencia Principal', 'Duracion','Destino Principal','Destinos Secundarios'];
-  $fieldsvocabularies = ['experiencias', 'experiencias', 'duraciones', 'destinos', 'destinos']
+  $fieldsvocabularies = ['experiencias', 'experiencias', 'duraciones', 'destinos', 'destinos'];
 
   // Creating the vocabularies
   foreach ($taxonames as $key => $taxo) {
