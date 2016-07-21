@@ -149,19 +149,10 @@ function traveldrupal_content_type()
       'locked' => 0,
     ),
     array(
-      'type' => 'pagina_general',
-      'name' => st('Pagina General'),
+      'type' => 'slider',
+      'name' => st('Slider'),
       'base' => 'node_content',
-      'description' => st('Use <em>pagina_general</em> for time-sensitive content pagina general.'),
-      'custom' => 1,
-      'modified' => 1,
-      'locked' => 0,
-    ),
-    array(
-      'type' => 'slider_front',
-      'name' => st('Slider Front'),
-      'base' => 'node_content',
-      'description' => st('Use <em>slider_front</em> for time-sensitive content slider front.'),
+      'description' => st('Use <em>slider</em> for time-sensitive content slider front.'),
       'custom' => 1,
       'modified' => 1,
       'locked' => 0,
@@ -174,16 +165,7 @@ function traveldrupal_content_type()
       'custom' => 1,
       'modified' => 1,
       'locked' => 0,
-    ),
-    array(
-      'type' => 'porque_nosotros',
-      'name' => st('Porque Nosotros'),
-      'base' => 'node_content',
-      'description' => st('Use <em>porque_nosotros</em> for time-sensitive content por que nosotros.'),
-      'custom' => 1,
-      'modified' => 1,
-      'locked' => 0,
-    ),
+    )
   );
 
   foreach ($types as $type) {
