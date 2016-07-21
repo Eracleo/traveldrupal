@@ -233,12 +233,9 @@ function traveldrupal_content_type()
   variable_set('node_options_experiencia', array('status'));
   variable_set('node_options_testimonio', array('status'));
   variable_set('node_options_slider', array('status'));
-  // FIELD
-  // Create an image field named "Image", enabled for the 'article' content type.
+  // Creating fields
   include 'taxonomies.php';
-  // Many of the following values will be defaulted, they're included here as an illustrative examples.
-  // See http://api.drupal.org/api/function/field_create_field/7
-
+  include 'fieldsfortour.php';
   $field = array(
     'field_name' => 'field_slider_tour',
     'type' => 'image',
