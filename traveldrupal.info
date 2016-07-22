@@ -25,6 +25,22 @@ dependencies[] = file
 dependencies[] = rdf
 
 ; Custom Modules
+;dependencies[] = locale
+;dependencies[] = ctools
+;dependencies[] = admin_menu
+;dependencies[] = admin_devel
+;dependencies[] = admin_menu_toolbar
+;dependencies[] = views_ui
+;dependencies[] = views
+;dependencies[] = webform
+;dependencies[] = flexslider
+;dependencies[] = flexslider_fields
+;dependencies[] = imce
+;dependencies[] = transliteration
+;dependencies[] = token
+;dependencies[] = metatag
+;dependencies[] = ckeditor
+;dependencies[] = captcha
 
 ; Information added by Drupal.org packaging script on 2016-02-24
 version = "7.00"
