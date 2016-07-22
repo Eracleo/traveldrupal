@@ -91,7 +91,7 @@ function traveldrupal_install() {
     ->fields(array('uid' => 1, 'rid' => $admin_role->rid))
     ->execute();
 
-  variable_set('user_register', USER_REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL);
+  variable_set('user_register', USER_REGISTER_ADMINISTRATORS_ONLY);
 
   // Create a default role for site administrators, with all available permissions assigned.
   $editor_role = new stdClass();
