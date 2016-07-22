@@ -95,7 +95,7 @@ function traveldrupal_install() {
   // Create a default role for site administrators, with all available permissions assigned.
   $editor_role = new stdClass();
   $editor_role->name = 'Editor';
-  $editor_role->weight = 2;
+  $editor_role->weight = 3;
   user_role_save($editor_role);
 
   // File Configuration
