@@ -35,12 +35,14 @@ dependencies[] = views
 ;dependencies[] = webform
 ;dependencies[] = flexslider
 ;dependencies[] = flexslider_fields
-;dependencies[] = imce
-;dependencies[] = transliteration
 ;dependencies[] = token
 ;dependencies[] = metatag
-;dependencies[] = ckeditor
-;dependencies[] = captcha
+dependencies[] = imce
+dependencies[] = ckeditor
+dependencies[] = captcha
+dependencies[] = transliteration
+dependencies[] = pathauto
+
 
 ; System Requirements.
 php_memory_limit = 128M
