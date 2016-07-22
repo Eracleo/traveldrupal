@@ -30,8 +30,8 @@ dependencies[] = ctools
 dependencies[] = admin_menu
 dependencies[] = admin_devel
 dependencies[] = admin_menu_toolbar
-;dependencies[] = views_ui
-;dependencies[] = views
+dependencies[] = views_ui
+dependencies[] = views
 ;dependencies[] = webform
 ;dependencies[] = flexslider
 ;dependencies[] = flexslider_fields
@@ -41,6 +41,9 @@ dependencies[] = admin_menu_toolbar
 ;dependencies[] = metatag
 ;dependencies[] = ckeditor
 ;dependencies[] = captcha
+
+; System Requirements.
+php_memory_limit = 128M
 
 ; Information added by Drupal.org packaging script on 2016-02-24
 version = "7.00"
