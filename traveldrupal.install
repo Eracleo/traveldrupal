@@ -89,8 +89,10 @@ function traveldrupal_install() {
   db_insert('users_roles')
     ->fields(array('uid' => 1, 'rid' => $admin_role->rid))
     ->execute();
-
   variable_set('user_register', USER_REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL);
+
+  // File Configuration
+  variable_set('file_public_path', "files");
 
 
   traveldrupal_content_type();
