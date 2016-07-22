@@ -98,8 +98,15 @@ function traveldrupal_install() {
   $editor_role->weight = 3;
   user_role_save($editor_role);
 
-  // File Configuration
+  // Cache
+  variable_set('cache', TRUE);
+  variable_set('block_cache', TRUE);
+  variable_set('cache_lifetime', '86400');
+  variable_set('page_cache_maximum_age', '86400');
+  variable_set('preprocess_js', TRUE);
+  // File
   variable_set('file_public_path', "files");
+  // Pathauto
   variable_set('pathauto_node_pattern', '[node:title].html');
   variable_set('pathauto_transliterate', TRUE);
 
