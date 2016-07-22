@@ -1,7 +1,7 @@
 <?php
-// Images for experiencia
+// Slider for Destino
 $field = array(
-  'field_name' => 'field_slider_experiencia',
+  'field_name' => 'field_slider_destiny',
   'type' => 'image',
   'cardinality' => 1,
   'locked' => FALSE,
@@ -17,11 +17,11 @@ $field = array(
 );
 field_create_field($field);
 $instance = array(
-  'field_name' => 'field_slider_experiencia',
+  'field_name' => 'field_slider_destiny',
   'entity_type' => 'node',
-  'label' => 'Imagen para experiencia',
-  'bundle' => 'experiencia',
-  'description' => st('Upload an image to go with this experience.'),
+  'label' => 'Imagenes para slider para este destino',
+  'bundle' => 'destiny',
+  'description' => st('Upload images to go with this destiny.'),
   'required' => FALSE,
 
   'settings' => array(
@@ -59,26 +59,40 @@ $instance = array(
   ),
 );
 field_create_instance($instance);
-// Subtitulo
 $field = array(
-  'field_name' => 'field_subtitulo_experiencia',
-  'type' => 'text',
+  'field_name' => 'field_destiny',
+  'type' => 'taxonomy_term_reference',
+  'cardinality' => FIELD_CARDINALITY_UNLIMITED,
+  'settings' => array(
+    'allowed_values' => array(
+      array(
+        'vocabulary' => 'destinies',
+        'parent' => 0,
+      ),
+    ),
+  ),
 );
 field_create_field($field);
+// assingning the fields to the content types
 $instance = array(
-  'field_name' => 'field_subtitulo_experiencia',
+  'field_name' => 'field_destiny',
   'entity_type' => 'node',
-  'label' => 'Subtitulo de la experiecia',
-  'bundle' => 'experiencia',
-  'description' => st('Define the subtitle for this experience. (e.g. experiencie)'),
-  'required' => FALSE,
-  'settings' => array(
-    // Here you inform either or not you want this field showing up on the registration form.
-    'user_register_form' => 1,
-  ),
+  'label' => 'Escribe el destino',
+  'bundle' => 'destiny',
+  'description' => st('Type commas to separate the words that describes your content.'),
   'widget' => array(
-    'type' => 'textfield',
+    'type' => 'taxonomy_autocomplete',
+    'weight' => -4,
+  ),
+  'display' => array(
+    'default' => array(
+      'type' => 'taxonomy_term_reference_link',
+      'weight' => 10,
+    ),
+    'teaser' => array(
+      'type' => 'taxonomy_term_reference_link',
+      'weight' => 10,
+    ),
   ),
 );
 field_create_instance($instance);
-// Color view

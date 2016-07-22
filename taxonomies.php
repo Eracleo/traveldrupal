@@ -1,18 +1,18 @@
 <?php
   // THIS CODE CREATE TAXONOMIES AND ADDED TO TOUR CONTENT TYPE
-  $taxonames = ['Destinos','Duraciones','Experiencias'];
-  $taxomachines = ['destinos','duraciones','experiencias'];
-  $taxodescriptions = ['Los destinos de los tours.','Las duraciones de los tours.','Las experiencias de los tours.'];
+  $taxonames = ['Destinies','Durations','Experiences'];
+  $taxomachines = ['destinies','durations','experiences'];
+  $taxodescriptions = ['The tour\'s destinies.','The tour\'s durations.','The tour\'s experiences'];
   $fields = ['field_experiencias_secundarias', 'field_experiencia_principal', 'field_duracion', 'field_destino_principal', 'field_destinos_secundarios'];
-  $fieldslabels = ['Experiencias Secundarias', 'Experiencia Principal', 'Duracion','Destino Principal','Destinos Secundarios'];
-  $fieldsvocabularies = ['experiencias', 'experiencias', 'duraciones', 'destinos', 'destinos'];
+  $fieldslabels = ['Secondary Experiences', 'Principal Experience', 'Duration','Principal Destiny','Secondary Destinies'];
+  $fieldsvocabularies = ['experiences', 'experiences', 'durations', 'destinies', 'destinies'];
 
   // Creating the vocabularies
   foreach ($taxonames as $key => $taxo) {
     $description = st($taxodescriptions[$key]);
     $vocabulary = (object) array(
       'name' => st($taxo),
-      'description' => $description,
+      'description' => st($description),
       'machine_name' => $taxomachines[$key],
     );
     taxonomy_vocabulary_save($vocabulary);
@@ -38,9 +38,9 @@
     $instancetocreate = array(
       'field_name' => $field,
       'entity_type' => 'node',
-      'label' => $fieldslabels[$key],
+      'label' => st($fieldslabels[$key]),
       'bundle' => 'tour',
-      'description' => st('Ingresar a coma para separar las palabras que describen tu contenido.'),
+      'description' => st('Type commas to separate the words that describes your content.'),
       'widget' => array(
         'type' => 'taxonomy_autocomplete',
         'weight' => -4,

@@ -34,7 +34,7 @@
     'entity_type' => 'node',
     'label' => 'Desde',
     'bundle' => 'tour',
-    'description' => st('Define precio label.'),
+    'description' => st('Define price label.'),
     'required' => FALSE,
     'settings' => array(
       // Here you inform either or not you want this field showing up on the registration form.

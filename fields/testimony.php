@@ -1,7 +1,7 @@
 <?php
   // Campo imagen
   $field = array(
-    'field_name' => 'field_imagen_testimonio',
+    'field_name' => 'field_imagen_testimony',
     'type' => 'image',
     'cardinality' => 1,
     'locked' => FALSE,
@@ -17,10 +17,10 @@
   );
   field_create_field($field);
   $instance = array(
-    'field_name' => 'field_imagen_testimonio',
+    'field_name' => 'field_imagen_testimony',
     'entity_type' => 'node',
     'label' => 'Imagen para testimonio',
-    'bundle' => 'testimonio',
+    'bundle' => 'testimony',
     'description' => st('Upload an image to go with this testimony.'),
     'required' => FALSE,
 
