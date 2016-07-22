@@ -1,7 +1,7 @@
 <?php
-// Image for blog
+// Images for experiencia
 $field = array(
-  'field_name' => 'field_image_blog',
+  'field_name' => 'field_slider_experience',
   'type' => 'image',
   'cardinality' => 1,
   'locked' => FALSE,
@@ -17,11 +17,11 @@ $field = array(
 );
 field_create_field($field);
 $instance = array(
-  'field_name' => 'field_image_blog',
+  'field_name' => 'field_slider_experience',
   'entity_type' => 'node',
-  'label' => 'Imagen para Blog',
-  'bundle' => 'blog',
-  'description' => st('Upload an image to go with this blog.'),
+  'label' => 'Imagen para experiencia',
+  'bundle' => 'experience',
+  'description' => st('Upload an image to go with this experience.'),
   'required' => FALSE,
 
   'settings' => array(
@@ -59,3 +59,26 @@ $instance = array(
   ),
 );
 field_create_instance($instance);
+// Subtitulo
+$field = array(
+  'field_name' => 'field_subtitulo_experience',
+  'type' => 'text',
+);
+field_create_field($field);
+$instance = array(
+  'field_name' => 'field_subtitulo_experience',
+  'entity_type' => 'node',
+  'label' => 'Subtitulo de la experiecia',
+  'bundle' => 'experience',
+  'description' => st('Define the subtitle for this experience. (e.g. experiencie)'),
+  'required' => FALSE,
+  'settings' => array(
+    // Here you inform either or not you want this field showing up on the registration form.
+    'user_register_form' => 1,
+  ),
+  'widget' => array(
+    'type' => 'textfield',
+  ),
+);
+field_create_instance($instance);
+// Color view

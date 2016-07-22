@@ -127,28 +127,19 @@ function traveldrupal_content_type()
       'locked' => 0,
     ),
     array(
-      'type' => 'blog',
-      'name' => st('Blog'),
+      'type' => 'destiny',
+      'name' => st('Destiny'),
       'base' => 'node_content',
-      'description' => st('Use <em>blog</em> for time-sensitive content blog.'),
+      'description' => st('Use <em>destiny</em> for time-sensitive content destino.'),
       'custom' => 1,
       'modified' => 1,
       'locked' => 0,
     ),
     array(
-      'type' => 'destino',
-      'name' => st('Destino'),
+      'type' => 'experience',
+      'name' => st('Experience'),
       'base' => 'node_content',
-      'description' => st('Use <em>destino</em> for time-sensitive content destino.'),
-      'custom' => 1,
-      'modified' => 1,
-      'locked' => 0,
-    ),
-    array(
-      'type' => 'experiencia',
-      'name' => st('Experiencia'),
-      'base' => 'node_content',
-      'description' => st('Use <em>experiencia</em> for time-sensitive content experiencia.'),
+      'description' => st('Use <em>experience</em> for time-sensitive content experiencia.'),
       'custom' => 1,
       'modified' => 1,
       'locked' => 0,
@@ -163,10 +154,10 @@ function traveldrupal_content_type()
       'locked' => 0,
     ),
     array(
-      'type' => 'testimonio',
-      'name' => st('Testimonio'),
+      'type' => 'testimony',
+      'name' => st('Testimony'),
       'base' => 'node_content',
-      'description' => st('Use <em>testimonio</em> for time-sensitive content testimonio.'),
+      'description' => st('Use <em>testimony</em> for time-sensitive content testimonio.'),
       'custom' => 1,
       'modified' => 1,
       'locked' => 0,
@@ -231,24 +222,23 @@ function traveldrupal_content_type()
   variable_set('node_submitted_page', FALSE);
   variable_set('node_submitted_tour', FALSE);
   variable_set('node_submitted_blog', FALSE);
-  variable_set('node_submitted_destino', FALSE);
-  variable_set('node_submitted_experiencia', FALSE);
-  variable_set('node_submitted_testimonio', FALSE);
+  variable_set('node_submitted_destiny', FALSE);
+  variable_set('node_submitted_experience', FALSE);
+  variable_set('node_submitted_testimony', FALSE);
   variable_set('node_submitted_slider', FALSE);
 
   variable_set('node_options_page', array('status'));
   variable_set('node_options_tour', array('status'));
   variable_set('node_options_blog', array('status'));
-  variable_set('node_options_destino', array('status'));
-  variable_set('node_options_experiencia', array('status'));
-  variable_set('node_options_testimonio', array('status'));
+  variable_set('node_options_destiny', array('status'));
+  variable_set('node_options_experience', array('status'));
+  variable_set('node_options_testimony', array('status'));
   variable_set('node_options_slider', array('status'));
   // Creating fields
   include 'taxonomies.php';
   include 'fields/tour.php';
-  include 'fields/blog.php';
-  include 'fields/destino.php';
-  include 'fields/experiencia.php';
+  include 'fields/destiny.php';
+  include 'fields/experience.php';
   include 'fields/slider.php';
-  include 'fields/testimonio.php';
+  include 'fields/testimony.php';
 }
