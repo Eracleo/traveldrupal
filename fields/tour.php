@@ -9,7 +9,7 @@
   $instance = array(
     'field_name' => 'field_dificultad_titulo',
     'entity_type' => 'node',
-    'label' => 'Dificultad Titulo',
+    'label' => st('Dificult Title'),
     'bundle' => 'tour',
     'description' => st('Define the name on the dificult label.'),
     'required' => FALSE,
@@ -32,7 +32,7 @@
   $instance = array(
     'field_name' => 'field_precio_desde',
     'entity_type' => 'node',
-    'label' => 'Desde',
+    'label' => st('From Price'),
     'bundle' => 'tour',
     'description' => st('Define price label.'),
     'required' => FALSE,
@@ -54,7 +54,7 @@
   $instance = array(
     'field_name' => 'field_precio_monto',
     'entity_type' => 'node',
-    'label' => 'Monto de Precio',
+    'label' => st('Amount of Price'),
     'bundle' => 'tour',
     'description' => st('Define the amount of money for the tour.'),
     'required' => FALSE,
@@ -76,7 +76,7 @@
   $instance = array(
     'field_name' => 'field_precio_moneda',
     'entity_type' => 'node',
-    'label' => 'Moneda del Precio',
+    'label' => st('Price currency'),
     'bundle' => 'tour',
     'description' => st('Define the money currency (e.g S/, $)'),
     'required' => FALSE,
@@ -99,7 +99,7 @@
   $instance = array(
     'field_name' => 'field_paypal',
     'entity_type' => 'node',
-    'label' => 'Imagen de Paypal',
+    'label' => st('Paypal Image'),
     'bundle' => 'tour',
     'description' => st('Insert the paypal image.'),
     'required' => FALSE,
@@ -123,7 +123,7 @@
   $instance = array(
     'field_name' => 'field_itinerario_cuerpo',
     'entity_type' => 'node',
-    'label' => 'Itinerario Cuerpo',
+    'label' => st('Itinerary Body'),
     'bundle' => 'tour',
     'description' => st('Write the body for itinerary.'),
     'required' => FALSE,
@@ -147,7 +147,7 @@
   $instance = array(
     'field_name' => 'field_incluye_cuerpo',
     'entity_type' => 'node',
-    'label' => 'Incluye Cuerpo',
+    'label' => st('Include Body'),
     'bundle' => 'tour',
     'description' => st('Write the body for include.'),
     'required' => FALSE,
@@ -172,7 +172,7 @@
   $instance = array(
     'field_name' => 'field_no_incluye_cuerpo',
     'entity_type' => 'node',
-    'label' => 'No Incluye Cuerpo',
+    'label' => st('No Include Body'),
     'bundle' => 'tour',
     'description' => st('Write the body for non include.'),
     'required' => FALSE,
@@ -197,7 +197,7 @@
     $instance = array(
       'field_name' => 'field_precios_cuerpo',
       'entity_type' => 'node',
-      'label' => 'Precios Cuerpo',
+      'label' => st('Prices Body'),
       'bundle' => 'tour',
       'description' => st('Write the body for precios.'),
       'required' => FALSE,
@@ -231,7 +231,7 @@
     $instance = array(
       'field_name' => 'field_slider_tour',
       'entity_type' => 'node',
-      'label' => 'Images para Slider Tour',
+      'label' => st('Slider Tour Images'),
       'bundle' => 'tour',
       'description' => st('Upload an image to go with this tour.'),
       'required' => FALSE,

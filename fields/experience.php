@@ -19,7 +19,7 @@ field_create_field($field);
 $instance = array(
   'field_name' => 'field_slider_experience',
   'entity_type' => 'node',
-  'label' => 'Imagen para experiencia',
+  'label' => st('Image'),
   'bundle' => 'experience',
   'description' => st('Upload an image to go with this experience.'),
   'required' => FALSE,
@@ -68,7 +68,7 @@ field_create_field($field);
 $instance = array(
   'field_name' => 'field_subtitulo_experience',
   'entity_type' => 'node',
-  'label' => 'Subtitulo de la experiecia',
+  'label' => st('Subtitle'),
   'bundle' => 'experience',
   'description' => st('Define the subtitle for this experience. (e.g. experiencie)'),
   'required' => FALSE,

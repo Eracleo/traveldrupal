@@ -19,7 +19,7 @@
   $instance = array(
     'field_name' => 'field_imagen_slider',
     'entity_type' => 'node',
-    'label' => 'Imagen para slider',
+    'label' => st('Slider Image'),
     'bundle' => 'slider',
     'description' => st('Upload an image to go with this slider.'),
     'required' => FALSE,

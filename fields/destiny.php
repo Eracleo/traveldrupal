@@ -19,7 +19,7 @@ field_create_field($field);
 $instance = array(
   'field_name' => 'field_slider_destiny',
   'entity_type' => 'node',
-  'label' => 'Imagenes para slider para este destino',
+  'label' => st('Images for slider'),
   'bundle' => 'destiny',
   'description' => st('Upload images to go with this destiny.'),
   'required' => FALSE,
@@ -77,7 +77,7 @@ field_create_field($field);
 $instance = array(
   'field_name' => 'field_destiny',
   'entity_type' => 'node',
-  'label' => 'Escribe el destino',
+  'label' => st('The Destiny'),
   'bundle' => 'destiny',
   'description' => st('Type commas to separate the words that describes your content.'),
   'widget' => array(

@@ -19,7 +19,7 @@
   $instance = array(
     'field_name' => 'field_imagen_testimony',
     'entity_type' => 'node',
-    'label' => 'Imagen para testimonio',
+    'label' => st('Testimony Image'),
     'bundle' => 'testimony',
     'description' => st('Upload an image to go with this testimony.'),
     'required' => FALSE,

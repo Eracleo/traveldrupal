@@ -115,7 +115,7 @@ function traveldrupal_install() {
   variable_set('pathauto_node_pattern', '[node:title].html');
   variable_set('pathauto_transliterate', TRUE);
 
-  //traveldrupal_content_type();
+  traveldrupal_content_type();
 }
 function traveldrupal_content_type()
 {
