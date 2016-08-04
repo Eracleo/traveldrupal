@@ -233,7 +233,7 @@ function traveldrupal_content_type()
   // Don't display date and author information for "Basic page" nodes by default.
   variable_set('node_submitted_page', FALSE);
   variable_set('node_submitted_tour', FALSE);
-  variable_set('node_submitted_blog', FALSE);
+  //variable_set('node_submitted_blog', FALSE);
   variable_set('node_submitted_destiny', FALSE);
   variable_set('node_submitted_experience', FALSE);
   variable_set('node_submitted_testimony', FALSE);
@@ -241,16 +241,18 @@ function traveldrupal_content_type()
 
   variable_set('node_options_page', array('status'));
   variable_set('node_options_tour', array('status'));
-  variable_set('node_options_blog', array('status'));
+  //variable_set('node_options_blog', array('status'));
   variable_set('node_options_destiny', array('status'));
   variable_set('node_options_experience', array('status'));
   variable_set('node_options_testimony', array('status'));
   variable_set('node_options_slider', array('status'));
   // Creating fields
+  /*
   include 'taxonomies.php';
   include 'fields/tour.php';
   include 'fields/destiny.php';
   include 'fields/experience.php';
   include 'fields/slider.php';
   include 'fields/testimony.php';
+  */
 }

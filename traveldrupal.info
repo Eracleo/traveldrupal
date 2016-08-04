@@ -25,7 +25,8 @@ dependencies[] = file
 dependencies[] = rdf
 
 ; Custom Modules
-;dependencies[] = locale
+dependencies[] = locale
+dependencies[] = blog
 dependencies[] = ctools
 dependencies[] = admin_menu
 dependencies[] = admin_devel
