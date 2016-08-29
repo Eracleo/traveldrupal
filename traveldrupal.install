@@ -254,7 +254,8 @@ function traveldrupal_content_type()
   variable_set('node_options_testimony', array('status'));
   variable_set('node_options_slider', array('status'));
   // Creating fields
-  /*include 'taxonomies.php';
+  /*
+  include 'taxonomies.php';
   include 'fields/tour.php';
   include 'fields/destiny.php';
   include 'fields/experience.php';
