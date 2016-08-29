@@ -105,6 +105,13 @@ function traveldrupal_install() {
   variable_set('cache_lifetime', '86400');
   variable_set('page_cache_maximum_age', '86400');
   variable_set('preprocess_js', TRUE);
+  // Logging and errors
+  variable_set('dblog_row_limit', '100');
+  variable_set('error_level', '1');
+  // Available updates
+  variable_set('update_check_frequency', '7');
+  variable_set('update_notification_threshold', 'security');
+  variable_set('update_notify_emails', 'drupal7@llika.com');
   // Errors
   variable_set('error_level', '0');
   variable_set('dblog_row_limit', '100');
@@ -139,10 +146,10 @@ function traveldrupal_content_type()
       'locked' => 0,
     ),
     array(
-      'type' => 'destiny',
-      'name' => st('Destiny'),
+      'type' => 'destination',
+      'name' => st('Destination'),
       'base' => 'node_content',
-      'description' => st('Use <em>destiny</em> for time-sensitive content destino.'),
+      'description' => st('Use <em>destination</em> for time-sensitive content destination.'),
       'custom' => 1,
       'modified' => 1,
       'locked' => 0,
@@ -234,7 +241,7 @@ function traveldrupal_content_type()
   variable_set('node_submitted_page', FALSE);
   variable_set('node_submitted_tour', FALSE);
   variable_set('node_submitted_blog', FALSE);
-  variable_set('node_submitted_destiny', FALSE);
+  variable_set('node_submitted_destination', FALSE);
   variable_set('node_submitted_experience', FALSE);
   variable_set('node_submitted_testimony', FALSE);
   variable_set('node_submitted_slider', FALSE);
@@ -242,15 +249,36 @@ function traveldrupal_content_type()
   variable_set('node_options_page', array('status'));
   variable_set('node_options_tour', array('status'));
   variable_set('node_options_blog', array('status'));
-  variable_set('node_options_destiny', array('status'));
+  variable_set('node_options_destination', array('status'));
   variable_set('node_options_experience', array('status'));
   variable_set('node_options_testimony', array('status'));
   variable_set('node_options_slider', array('status'));
   // Creating fields
-  include 'taxonomies.php';
+  /*include 'taxonomies.php';
   include 'fields/tour.php';
   include 'fields/destiny.php';
   include 'fields/experience.php';
   include 'fields/slider.php';
   include 'fields/testimony.php';
+  */
+}
+function fields()
+{
+  // Campo imagen
+  $field = array(
+    'field_name' => 'field_image',
+    'type' => 'image',
+    'cardinality' => 1,
+    'locked' => FALSE,
+    'indexes' => array('fid' => array('fid')),
+    'settings' => array(
+      'uri_scheme' => 'public',
+      'default_image' => FALSE,
+    ),
+    'storage' => array(
+      'type' => 'field_sql_storage',
+      'settings' => array(),
+    ),
+  );
+  field_create_field($field);
 }
